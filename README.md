@@ -1,5 +1,8 @@
 # opti-task-manager
+
 [![Code Style: Google](https://img.shields.io/badge/code%20style-google-blueviolet.svg)](https://github.com/google/gts)
+
+
  A simple task management system with authentication
  
  ## Technologies
