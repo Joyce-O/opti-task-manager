@@ -36,12 +36,12 @@ git clone https://github.com/Joyce-O/opti-task-manager.git
 
 ### API
 
-|User Login           | POST/api/login           | login                                 |
-| User  signup        | POST/api/users          | sigup                                |
-| Create task         | POST/api/tasks          | create task                          |
-| Read a task         |GET/api/tasks/:taskId    | get task requires jwt accessToken    |
-| Edit task           |PUT/api/tasks/:taskId    | edit task requires jwt accessToken   |
-| Delete task         |DELETE/api/tasks/:taskId | delete task requires jwt accessToken |
+| POST/api/login           | login                                 |
+| POST/api/users           | sigup                                 |
+| POST/api/tasks           | create task                           |
+| GET/api/tasks/:taskId    | get task requires jwt accessToken     |
+| PUT/api/tasks/:taskId    | edit task requires jwt accessToken    |
+| DELETE/api/tasks/:taskId | delete task requires jwt accessToken  |
 
 
 ## Database
