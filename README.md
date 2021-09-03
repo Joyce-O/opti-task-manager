@@ -30,8 +30,10 @@ git clone https://github.com/Joyce-O/opti-task-manager.git
 
 ##### With Docker 
 `make up` -- start project in development
+
 `make down` -- shutdown docker container
-`make up-prod` -- start project in production.
+
+`make up-prod` -- start project in production
 
 
 ### API
