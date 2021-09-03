@@ -34,7 +34,7 @@ git clone https://github.com/Joyce-O/opti-task-manager.git
 `make up-prod` -- start project in production.
 
 
-### App API
+### API
 
 | API             | URL                              Description             |
 | ------------------- | -------------------------------------------|-------------------|
