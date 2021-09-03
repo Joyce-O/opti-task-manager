@@ -1,4 +1,6 @@
 import {Request, Response} from 'express';
+import {JwtPayload} from 'jsonwebtoken';
+import {decode} from '@src/utility/jwt';
 import {get} from 'lodash';
 import {
   createTask,
@@ -8,7 +10,9 @@ import {
 } from '@src/service/task';
 
 export async function createTaskHandler(req: Request, res: Response) {
-  const userId = get(req, 'user._id');
+  const token = get(req, 'headers.authorization', '').replace(/^Bearer\s/, '');
+  const {decoded} = decode(token) as JwtPayload;
+  const userId = decoded._id;
   const body = req.body;
 
   const task = await createTask({...body, user: userId});

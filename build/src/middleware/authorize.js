@@ -11,11 +11,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.authorize = void 0;
 const lodash_1 = require("lodash");
+const jwt_1 = require("@src/utility/jwt");
 const authorize = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    const user = (0, lodash_1.get)(req, 'user');
-    if (!user) {
+    const token = (0, lodash_1.get)(req, 'headers.authorization', '').replace(/^Bearer\s/, '');
+    if (!token)
         return res.sendStatus(403);
+    const { decoded } = (0, jwt_1.decode)(token);
+    if (decoded) {
+        return next();
     }
-    return next();
 });
 exports.authorize = authorize;

@@ -1,0 +1,32 @@
+versions: '3.7'
+#services are the containers we want to run
+
+services:
+  opti-task-manager:
+    build: #build step
+      context: . #I want it in the current directory
+        dockerfile: Dockerfile
+        target: base #we are using dev base here
+    volumes: #volumes create data that persists in your container and can be used to persist data in database
+      - ./src:/home/node/app/src
+      - ./nodemon.json:/home/node/app/nodemon.json
+    container_name: opti-task-manager
+    links:
+      - mongo
+    expose: 
+      - '4000'
+    ports: #map docker exposed port to local provided port
+      -'4000:4000'
+    command: npm run dev #again becuase it is dev base
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
+
+    #TO RUN IT on the command line
+    #docker-compose build
+    #next do docker-compose up -d (-d runs it in the background)
+

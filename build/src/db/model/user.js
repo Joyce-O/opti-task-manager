@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserSchema = void 0;
 const mongoose_1 = require("mongoose");
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
-const logger_1 = __importDefault(require("@src/utility/logger"));
+const logger_1 = __importDefault(require("../../utility/logger"));
 exports.UserSchema = new mongoose_1.Schema({
     email: {
         type: String,

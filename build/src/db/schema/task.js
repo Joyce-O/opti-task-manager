@@ -15,8 +15,3 @@ exports.taskIdSchema = (0, yup_1.object)({
         taskId: (0, yup_1.string)().required('taskId is required'),
     }),
 });
-// 1. title
-// 2. description
-// 3. time when it should be done
-// 4. time when the reminder notification should be shown
-// 5. isCompleted

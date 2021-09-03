@@ -1,0 +1,15 @@
+versions: '3.7'
+
+services:
+  trying-ts-docker:
+    build:
+      target: production
+    command: node build/app.js
+
+    #This compose file will overide what is set in development
+    # to run it so it does that do
+    # docker-compose -f docker.compose.yml -f docker.compose.prod.yml up -d
+
+    # To stop the container you can use docker-compose down
+
+    #Use make file to show what to do to an outsider
