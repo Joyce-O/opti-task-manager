@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 require("dotenv/config");
-const logger_1 = __importDefault(require("@src/logger"));
+const logger_1 = __importDefault(require("@src/utility/logger"));
 const connect = () => {
     const dbUri = process.env.MONGODB_URI;
     return mongoose_1.default

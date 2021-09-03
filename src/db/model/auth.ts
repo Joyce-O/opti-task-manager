@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
+import {model, Schema, Document} from 'mongoose';
 import {IUser} from '@src/db/model/user';
 
-export interface ISession extends mongoose.Document {
+export interface ISession extends Document {
   user: IUser['_id'];
   valid: boolean;
   userAgent: string;
@@ -9,15 +9,15 @@ export interface ISession extends mongoose.Document {
   updatedAt: Date;
 }
 
-const SessionSchema = new mongoose.Schema(
+const SessionSchema = new Schema(
   {
-    user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+    user: {type: Schema.Types.ObjectId, ref: 'User'},
     userAgent: {type: String},
     valid: {type: Boolean, default: true},
   },
   {timestamps: true}
 );
 
-const Session = mongoose.model<ISession>('Session', SessionSchema);
+const Session = model<ISession>('Session', SessionSchema);
 
 export default Session;
