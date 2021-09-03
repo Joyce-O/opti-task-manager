@@ -33,7 +33,9 @@ export async function gettaskHandler(req: Request, res: Response) {
 
 export async function updatetaskHandler(req: Request, res: Response) {
   const taskId = get(req, 'params.taskId');
-  const userId = get(req, 'user._id');
+  const token = get(req, 'headers.authorization', '').replace(/^Bearer\s/, '');
+  const {decoded} = decode(token) as JwtPayload;
+  const userId = decoded._id;
   const update = req.body;
 
   const task = await findTask({taskId});
@@ -52,11 +54,15 @@ export async function updatetaskHandler(req: Request, res: Response) {
 }
 
 export async function deletetaskHandler(req: Request, res: Response) {
-  const userId = get(req, 'user._id');
+  const token = get(req, 'headers.authorization', '').replace(/^Bearer\s/, '');
+  const {decoded} = decode(token) as JwtPayload;
+  const userId = decoded._id;
   const taskId = get(req, 'params.taskId');
 
   const task = await findTask({taskId});
 
+  console.log('taskId', taskId);
+  console.log('aa', task);
   if (!task) {
     return res.sendStatus(404);
   }

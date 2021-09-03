@@ -25,10 +25,15 @@ router.get(
   gettaskHandler
 );
 
-router.put('/tasks', authorize, updatetaskHandler);
+router.put(
+  '/tasks/:taskId',
+  authorize,
+  validateRequest(taskIdSchema),
+  updatetaskHandler
+);
 
 router.delete(
-  '/tasks/taskId:',
+  '/tasks/:taskId',
   authorize,
   validateRequest(taskIdSchema),
   deletetaskHandler

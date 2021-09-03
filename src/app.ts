@@ -12,11 +12,11 @@ const app: Application = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
-app.get('*', (req: Request, res: Response) => {
+app.use(routes);
+
+app.get('/', (req: Request, res: Response) => {
   return res.send({Message: 'Hello, opti-task-manager'});
 });
-
-app.use(routes);
 
 app.listen(port, host, () => {
   logger.info(`Server listening on http://${host}:${port}`);
