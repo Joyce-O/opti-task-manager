@@ -36,9 +36,7 @@ git clone https://github.com/Joyce-O/opti-task-manager.git
 
 ### API
 
- API             URL                              Description             
-|---------------------|-------------------------|--------------------------------------|
-| User Login          | POST/api/login          | login                                |
+|User Login           | POST/api/login           | login                                 |
 | User  signup        | POST/api/users          | sigup                                |
 | Create task         | POST/api/tasks          | create task                          |
 | Read a task         |GET/api/tasks/:taskId    | get task requires jwt accessToken    |
