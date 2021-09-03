@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import 'dotenv/config';
-import logger from '@src/logger';
+import logger from '@src/utility/logger';
 
 const connect = () => {
   const dbUri = process.env.MONGODB_URI as string;
