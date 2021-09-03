@@ -13,7 +13,7 @@
 * Docker
 * Jest
 
-## Setup and
+## Setup
  #### Clone Project
 
 ```shell
